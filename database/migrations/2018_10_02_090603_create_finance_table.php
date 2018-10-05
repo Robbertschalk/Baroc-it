@@ -15,6 +15,7 @@ class CreateFinanceTable extends Migration
     {
         Schema::create('finance', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('new_invoice');
             $table->boolean('creditworthy');
             $table->string('invoice_status');
             $table->timestamps();
