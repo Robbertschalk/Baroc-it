@@ -27,9 +27,9 @@
         }
 
         .logout_button{
-            margin-top: 20px;
             font-size: 20px;
-            margin-left: 20px;
+            padding: 20px;
+            background-color: #3d4852;
             margin-bottom: 75px;
         }
 
@@ -106,8 +106,6 @@
                     <td>2</td>
                     <td>245</td>
                     <td>Yes</td>
-
-
                 </tr>
             </table>
         </div>
