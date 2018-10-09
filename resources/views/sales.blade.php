@@ -14,6 +14,7 @@
 
         *{
             font-family: Arial;
+            margin: 0 auto;
         }
 
          a{
@@ -33,10 +34,7 @@
             margin-bottom: 75px;
         }
 
-        .logout_button:hover a{
-            background-color: red;
-            color: white;
-        }
+
 
         .wrapper_main{
             text-align: center;
