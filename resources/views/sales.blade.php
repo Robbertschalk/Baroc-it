@@ -92,19 +92,25 @@
             <h3>Customer Data</h3>
             <table>
                 <tr>
+
                     <th>Name</th>
                     <th>Phonenumber</th>
                     <th>Limit</th>
-                    <th>customer number</th>
-                    <th>Credit Worthy</th>
+                    <th>Number</th>
+                    <th>Creditworthy</th>
+
                 </tr>
+
+                @foreach ($data as $d)
                 <tr>
-                    <td>Piet</td>
-                    <td>0625784896</td>
-                    <td>2</td>
-                    <td>245</td>
-                    <td>Yes</td>
+                    <td>{{$d->Name}}</td>
+                    <td>{{$d->Tel}}</td>
+                    <td>{{$d->limit}}</td>
+                    <td>{{$d->Customernumber}}</td>
+                    <td>{{$d->Creditworthy}}</td>
+
                 </tr>
+                @endforeach
             </table>
         </div>
     </div>

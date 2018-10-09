@@ -9,7 +9,6 @@ class SalesController extends Controller
 {
     public function sales(){
 
-
         $data = GetData::all();
 
         return view('sales')
