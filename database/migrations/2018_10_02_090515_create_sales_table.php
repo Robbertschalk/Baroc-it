@@ -14,6 +14,7 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('Name');
             $table->string('Tel');
@@ -22,7 +23,7 @@ class CreateSalesTable extends Migration
             $table->string('Creditworthy');
             $table->boolean('prospect');
             $table->string('Contactperson');
-            $table->timestamps();
+
         });
     }
 

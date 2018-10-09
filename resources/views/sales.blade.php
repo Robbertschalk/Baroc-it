@@ -34,8 +34,6 @@
             margin-bottom: 75px;
         }
 
-
-
         .wrapper_main{
             text-align: center;
             display: flex;
@@ -44,24 +42,41 @@
 
         .main_left{
             margin: 0 auto;
-            border: solid 1px;
-            width: 40%;
         }
 
         .main_right{
             margin: 0 auto;
-            border: solid 1px;
             width: 40%;
         }
 
         th, td {
             border: 1px solid black;
-            font-size: 20px;
+            font-size: 30px;
         }
 
         .add_client_form{
            width: 70px;
             text-align: center;
+            margin-left: 0px;
+        }
+
+        .main_right h3{
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        th{
+            padding: 10px;
+        }
+
+        .main_left h3{
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        input{
+            width: 200px;
+            height: 30px;
         }
 
     </style>
@@ -74,17 +89,15 @@
         <div class="main_left">
             <h3>Add Client</h3>
             <div class="add_client_form">
-                <form>
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-                    <input type="text" placeholder="test">
-
+                <form action="/sales1" method="post">
+                    {{ csrf_field() }}
+                    <input type="text" name="name" placeholder="name">
+                    <input type="text" name="tel" placeholder="tel">
+                    <input type="text" name="limit" placeholder="limit" disabled>
+                    <input type="text" name="customernumber" placeholder="customernumber">
+                    <input type="text" name="creditworthy" placeholder="creditworthy" >
+                    <input type="text" name="contactperson" placeholder="contactperson">
+                    <input type="submit" name="submit" value="add">
                 </form>
             </div>
         </div>
@@ -92,7 +105,6 @@
             <h3>Customer Data</h3>
             <table>
                 <tr>
-
                     <th>Name</th>
                     <th>Phonenumber</th>
                     <th>Limit</th>
@@ -100,7 +112,6 @@
                     <th>Creditworthy</th>
 
                 </tr>
-
                 @foreach ($data as $d)
                 <tr>
                     <td>{{$d->Name}}</td>
@@ -108,7 +119,6 @@
                     <td>{{$d->limit}}</td>
                     <td>{{$d->Customernumber}}</td>
                     <td>{{$d->Creditworthy}}</td>
-
                 </tr>
                 @endforeach
             </table>
