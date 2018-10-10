@@ -25,4 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 route::get('/sales', 'SalesController@sales');
 
-route::post('/sales1', 'Controller@insert');
+Route::post('/sales_add_client', 'SalesController@insert')->name('client.add');

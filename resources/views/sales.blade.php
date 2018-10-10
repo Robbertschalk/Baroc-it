@@ -97,13 +97,13 @@
         <div class="main_left">
             <h3>Add Client</h3>
             <div class="add_client_form">
-                <form action="/sales1" method="post">
-                    {{ csrf_field() }}
+                <form action="{{route('client.add')}}"  method="post">
+                    @csrf
                     <input type="text" name="name" placeholder="name">
-                    <input type="text" name="tel" placeholder="tel">
+                    <input type="number" name="tel" placeholder="tel">
                     <input type="text" name="limit" placeholder="limit" disabled>
                     <input type="text" name="customernumber" placeholder="customernumber">
-                    <input type="text" name="creditworthy" placeholder="creditworthy" >
+                    <input type="text" name="creditworthy" placeholder="creditworthy" disabled>
                     <input type="text" name="contactperson" placeholder="contactperson">
                     <input type="submit" name="submit" value="add">
                 </form>
