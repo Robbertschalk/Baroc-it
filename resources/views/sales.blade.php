@@ -6,7 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+
     <style>
+
 
         body{
             margin: 0 auto;
@@ -46,12 +54,12 @@
 
         .main_right{
             margin: 0 auto;
-            width: 40%;
+
         }
 
         th, td {
             border: 1px solid black;
-            font-size: 30px;
+
         }
 
         .add_client_form{
@@ -102,27 +110,40 @@
             </div>
         </div>
         <div class="main_right">
-            <h3>Customer Data</h3>
-            <table>
+            <table class="table" id="table">
+                <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Phonenumber</th>
-                    <th>Limit</th>
-                    <th>Number</th>
-                    <th>Creditworthy</th>
-
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phonenumber</th>
+                    <th class="text-center">Limit</th>
+                    <th class="text-center">Customernumber</th>
+                    <th class="text-center">Creditworthy</th>
+                    <th class="text-center">Prospect</th>
+                    <th class="text-center">Contactperson</th>
                 </tr>
-                @foreach ($data as $d)
-                <tr>
-                    <td>{{$d->Name}}</td>
-                    <td>{{$d->Tel}}</td>
-                    <td>{{$d->limit}}</td>
-                    <td>{{$d->Customernumber}}</td>
-                    <td>{{$d->Creditworthy}}</td>
-                </tr>
+                </thead>
+                <tbody>
+                @foreach($data as $item)
+                    <tr class="item{{$item->id}}">
+                        <td>{{$item->Name}}</td>
+                        <td>{{$item->Tel}}</td>
+                        <td>{{$item->limit}}</td>
+                        <td>{{$item->Customernumber}}</td>
+                        <td>{{$item->Creditworthy}}</td>
+                        <td>{{$item->prospect}}</td>
+                        <td>{{$item->Contactperson}}</td>
+                    </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable();
+        } );
+    </script>
+
+
 </body>
 </html>
