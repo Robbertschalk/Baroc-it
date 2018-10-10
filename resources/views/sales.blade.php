@@ -92,6 +92,7 @@
 <body>
     <div class="logout_button">
         <a href="">Logout</a>
+        <a href="{{route('refresh.sales')}}">Refresh</a>
     </div>
     <div class="wrapper_main">
         <div class="main_left">
