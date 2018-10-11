@@ -16,4 +16,6 @@ class FinanceController extends Controller
         return view('finance')
             ->with('data', $data);
     }
+
+
 }
