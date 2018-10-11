@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sales extends Model
+class GetData extends Model
 {
     public $table = "Sales";
-    public $timestamps = false;
 }

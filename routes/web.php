@@ -11,6 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +25,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::get('/sales', 'SalesController@sales');
+
+route::get('/sales', 'SalesController@sales')->name('refresh.sales');
+
+Route::post('/sales_add_client', 'SalesController@insert')->name('client.add');
+
+Route::get('/finance', 'FinanceController@index')->name('finance');
+

@@ -14,11 +14,16 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
+
             $table->increments('id');
+            $table->string('Name');
+            $table->string('Tel');
+            $table->string('limit');
+            $table->string('Customernumber');
+            $table->string('Creditworthy');
             $table->boolean('prospect');
-            $table->date('first_date_of_contact');
-            $table->date('last_date_of_contact');
-            $table->timestamps();
+            $table->string('Contactperson');
+
         });
     }
 
