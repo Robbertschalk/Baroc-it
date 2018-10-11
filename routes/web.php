@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-route::get('/sales', 'SalesController@sales');
+Route::get('/sales', 'SalesController@sales');
+
+Route::get('/finance', 'FinanceController@finance');
