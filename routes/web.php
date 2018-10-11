@@ -30,6 +30,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 route::get('/sales', 'SalesController@sales');
 
 route::get('/sales', 'SalesController@sales')->name('refresh.sales');
@@ -43,3 +44,8 @@ Route::get('/sales', 'SalesController@sales');
 
 Route::get('/dev', 'DevelopmentController@dev');
 >>>>>>> Dev
+=======
+Route::get('/sales', 'SalesController@sales');
+
+Route::get('/finance', 'FinanceController@finance');
+>>>>>>> fin
