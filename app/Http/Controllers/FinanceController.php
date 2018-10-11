@@ -9,7 +9,7 @@ use App\Finance;
 
 class FinanceController extends Controller
 {
-<<<<<<< HEAD
+
     /**
      * Create a new controller instance.
      *
@@ -28,13 +28,15 @@ class FinanceController extends Controller
     public function index()
     {
         return view('finance');
-=======
-    public function finance() {
-
-        $data = Finance::all();
-
-        return view('finance')
-            ->with('data', $data);
->>>>>>> fin
     }
-}
+
+        public function finance()
+        {
+
+            $data = Finance::all();
+
+            return view('finance')
+                ->with('data', $data);
+
+        }
+    }
