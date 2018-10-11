@@ -40,3 +40,9 @@ class FinanceController extends Controller
 
         }
     }
+<<<<<<< HEAD
+=======
+
+
+}
+>>>>>>> fin

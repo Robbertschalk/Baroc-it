@@ -28,13 +28,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 
 route::get('/sales', 'SalesController@sales');
 
+=======
+Route::get('/sales', 'SalesController@sales');
+>>>>>>> fin
 route::get('/sales', 'SalesController@sales')->name('refresh.sales');
 
 Route::post('/sales_add_client', 'SalesController@insert')->name('client.add');
 
+<<<<<<< HEAD
 Route::get('/finance', 'FinanceController@index')->name('finance');
 
 
@@ -46,3 +51,8 @@ Route::get('/sales', 'SalesController@sales');
 
 Route::get('/finance', 'FinanceController@finance');
 
+=======
+
+Route::get('/finance', 'FinanceController@finance');
+route::get('/finance', 'FinanceController@finance')->name('refresh.finance');
+>>>>>>> fin
