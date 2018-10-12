@@ -63,7 +63,7 @@
         }
 
         .add_client_form{
-           width: 70px;
+           width: 321px;
             text-align: center;
             margin-left: 0px;
         }
@@ -83,13 +83,28 @@
         }
 
         input{
-            width: 200px;
+            width: 300px;
             height: 30px;
         }
-
+        .error_message{
+            text-align: center;
+            font-size: 20px;
+            background-color: red;
+        }
     </style>
 </head>
 <body>
+<div class="error">
+
+    @if (isset($error))
+
+        @if ($error == true)
+            <p class="error_message">Empty input field(s)</p>
+        @endif
+
+    @endif
+
+</div>
     <div class="logout_button">
         <a href="">Logout</a>
         <a href="{{route('refresh.sales')}}">Refresh</a>
@@ -103,13 +118,15 @@
                     <input type="text" name="name" placeholder="name">
                     <input type="number" name="tel" placeholder="tel">
                     <input type="text" name="limit" placeholder="limit" disabled>
-                    <input type="text" name="customernumber" placeholder="customernumber">
+                    <input type="number" name="customernumber" placeholder="customernumber">
                     <input type="text" name="creditworthy" placeholder="creditworthy" disabled>
                     <input type="text" name="contactperson" placeholder="contactperson">
                     <input type="submit" name="submit" value="add">
+                    <p>Make sure you press the refresh button after adding a client</p>
                 </form>
             </div>
         </div>
+
         <div class="main_right">
             <table class="table" id="table">
                 <thead>
