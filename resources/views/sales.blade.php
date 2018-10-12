@@ -90,6 +90,14 @@
             text-align: center;
             font-size: 20px;
             background-color: red;
+            margin-bottom: 0px;
+            color: white;
+        }
+
+        select{
+
+            width: 300px;
+
         }
     </style>
 </head>
@@ -101,9 +109,7 @@
         @if ($error == true)
             <p class="error_message">Empty input field(s)</p>
         @endif
-
-    @endif
-
+        @endif
 </div>
     <div class="logout_button">
         <a href="">Logout</a>
@@ -125,7 +131,24 @@
                     <p>Make sure you press the refresh button after adding a client</p>
                 </form>
             </div>
-        </div>
+            <h3>Add project</h3>
+            <div class="add_client_form">
+                <form action="{{route('project.add')}}"  method="post">
+                    @csrf
+                    <input type="text" name="client_name" placeholder="client name">
+                    <input type="text" name="p_name" placeholder="project name">
+                    <input type="text" name="p_desc" placeholder="project desc">
+                    <select name="p_status">
+                        <option value="open">Open</option>
+                        <option value="closed">Closed</option>
+                        <option value="suspended">Suspended</option>
+                    </select>
+                    <input type="submit" name="submit" value="add">
+                    <p>Make sure you press the refresh button after adding a client</p>
+                </form>
+            </div>
+    </div>
+
 
         <div class="main_right">
             <table class="table" id="table">
@@ -161,7 +184,5 @@
             $('#table').DataTable();
         } );
     </script>
-
-
 </body>
 </html>

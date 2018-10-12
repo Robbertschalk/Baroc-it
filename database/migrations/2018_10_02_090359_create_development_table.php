@@ -15,9 +15,10 @@ class CreateDevelopmentTable extends Migration
     {
         Schema::create('development', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('open_projects');
-            $table->string('suspended_projects');
-            $table->string('closed_projects');
+            $table->string('client_name');
+            $table->string('project_status');
+            $table->string('project_name');
+            $table->string('project_description');
             $table->timestamps();
         });
     }
