@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/', function () {
+    return view('/auth/login');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -27,6 +27,8 @@ route::get('/sales', 'SalesController@sales')->name('refresh.sales');
 Route::post('/sales_add_client', 'SalesController@insert')->name('client.add');
 
 Route::post('/sales_add_project', 'SalesController@insert_project')->name('project.add');
+
+Route::get('/logout', 'HomeController@logout')->name('log.out');
 
 
 

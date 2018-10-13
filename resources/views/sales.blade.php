@@ -112,7 +112,7 @@
         @endif
 </div>
     <div class="logout_button">
-        <a href="login">Logout</a>
+        <a href="{{route('log.out')}}">Logout</a>
         <a href="{{route('refresh.sales')}}">Refresh</a>
     </div>
     <div class="wrapper_main">
