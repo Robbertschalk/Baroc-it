@@ -63,7 +63,7 @@
         }
 
         .add_client_form{
-           width: 70px;
+           width: 321px;
             text-align: center;
             margin-left: 0px;
         }
@@ -83,15 +83,36 @@
         }
 
         input{
-            width: 200px;
+            width: 300px;
             height: 30px;
         }
+        .error_message{
+            text-align: center;
+            font-size: 20px;
+            background-color: red;
+            margin-bottom: 0px;
+            color: white;
+        }
 
+        select{
+
+            width: 300px;
+
+        }
     </style>
 </head>
 <body>
+<div class="error">
+
+    @if (isset($error))
+
+        @if ($error == true)
+            <p class="error_message">Empty input field(s)</p>
+        @endif
+        @endif
+</div>
     <div class="logout_button">
-        <a href="">Logout</a>
+        <a href="{{route('log.out')}}">Logout</a>
         <a href="{{route('refresh.sales')}}">Refresh</a>
     </div>
     <div class="wrapper_main">
@@ -103,13 +124,32 @@
                     <input type="text" name="name" placeholder="name">
                     <input type="number" name="tel" placeholder="tel">
                     <input type="text" name="limit" placeholder="limit" disabled>
-                    <input type="text" name="customernumber" placeholder="customernumber">
+                    <input type="number" name="customernumber" placeholder="customernumber">
                     <input type="text" name="creditworthy" placeholder="creditworthy" disabled>
                     <input type="text" name="contactperson" placeholder="contactperson">
                     <input type="submit" name="submit" value="add">
+                    <p>Make sure you press the refresh button after adding a client</p>
                 </form>
             </div>
-        </div>
+            <h3>Add project</h3>
+            <div class="add_client_form">
+                <form action="{{route('project.add')}}"  method="post">
+                    @csrf
+                    <input type="text" name="client_name" placeholder="client name">
+                    <input type="text" name="p_name" placeholder="project name">
+                    <input type="text" name="p_desc" placeholder="project desc">
+                    <select name="p_status">
+                        <option value="open">Open</option>
+                        <option value="closed">Closed</option>
+                        <option value="suspended">Suspended</option>
+                    </select>
+                    <input type="submit" name="submit" value="add">
+                    <p>Make sure you press the refresh button after adding a client</p>
+                </form>
+            </div>
+    </div>
+
+
         <div class="main_right">
             <table class="table" id="table">
                 <thead>
@@ -144,7 +184,5 @@
             $('#table').DataTable();
         } );
     </script>
-
-
 </body>
 </html>

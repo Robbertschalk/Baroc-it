@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('finance');
     }
+
+    public function logout()
+    {
+        return view('auth/login');
+    }
+
 }

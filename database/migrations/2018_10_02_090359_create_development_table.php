@@ -15,6 +15,7 @@ class CreateDevelopmentTable extends Migration
     {
         Schema::create('development', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('client_name');
             $table->string('project_status');
             $table->string('project_name');
             $table->string('project_description');
